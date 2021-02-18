@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sector Wise Fourth Night</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<main class="content">
+				<div class="container-fluid">
+
+    <div class="row">
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+        <select class="custom-select" id="sector3" onchange="myfunc(this.value, this.text);">
+            <option disabled selected>Choose Sector</option>
+            {% for key,value in sector.items() %}
+                <option value="{{value}}">{{key}}</option>
+            {% endfor %}
+        </select>
+            </div>
+        </div>
+    </div>
+        <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+                <form action="/" method="post" enctype="multipart/form-data" >
+                    <select class="custom-select" id="sector4" name="night_fourth" onchange="this.form.submit()">
+                        {% for j in x %}
+                            {% if j == night_fourth %}
+                                <option value="{{j}}" selected>{{j}}</option>
+                            {% else %}
+                                <option value="{{j}}">{{j}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+        </div>
+    <div class="cart">
+        <div class="card-body">
+            <div class="row">
+<!--                <div class="col-1">-->
+<!--                    <input type="checkbox" id="checkAll" onchange="checkfunc()">-->
+<!--                </div>-->
+                <div class="col-11">
+            <div class="chart">
+                <div id="container"></div>
+            </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+                </div>
+</main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function myfunc(arrdata, text) {
+            var arrdata = JSON.parse(arrdata);
+            var x = JSON.parse("{{x}}".replaceAll("&#39;", '"'));
+            var c = 0;
+            var data = []
+            for(var i of arrdata){
+                data.push({name: x[c],data: [i]})
+                c++;
+            }
+            console.log("data ----=== ", data);
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: text
+                },
+                xAxis: {
+                    categories: x,
+                },
+                credits: {
+                    enabled: false
+                },
+                series: data
+            });
+        }
+    </script>
+    <script>
+        var night_fourthx = JSON.parse("{{night_fourthx}}".replaceAll("&#39;", '"').replaceAll("&amp;", '&'));
+        var night_fourth_data = JSON.parse("{{night_fourth_data}}".replaceAll("&#39;", '"'));
+        if(night_fourthx.length>0 && night_fourth_data.length>0){
+            var data = []
+            var c = 0;
+            for(var i of night_fourth_data){
+                    data.push({name: night_fourthx[c],data: [i]})
+                    c++;
+                }
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: "{{night_fourth}}"
+                },
+                xAxis: {
+                    categories: night_fourthx,
+                },
+                credits: {
+                    enabled: false
+                },
+                series: data
+            });
+          }
+    </script>
+</body>
+</html>

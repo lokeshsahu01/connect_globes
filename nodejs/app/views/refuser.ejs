@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>CRUD form</h2>
+ 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <form method="post" action="/ref/post/">
+          <th scope="col">#</th>
+          <th scope="col">
+              <select class="form-control" name="user">
+                  <% for (var i =0; i <= users.length-1;  i++ ) { %>
+                      <option value="<%=users[i]._id%>"><%=users[i].username %></option>
+                  <% } %>
+              </select>
+          </th>
+          <th scope="col"><input type="text" class="form-control" id="height" placeholder="Enter height" name="height"></th>
+          <th scope="col"><input type="text" class="form-control" id="weight" placeholder="Enter weight" name="weight"></th>
+          <th scope="col"><input type="text" class="form-control" id="color"  placeholder="Enter color"  name="color"></th>
+          <th scope="col"><input type="text" class="form-control" id="status" placeholder="Enter status" name="status"></th>
+          <th scope="col"><button type="submit" class="btn btn-primary">Submit</button></th>
+        </form>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <% for (var i =0; i <= data.length-1;  i++ ) { %>
+        <th scope="row" style="padding-top:36px;"><%=i+1 %></th>
+        <td style="padding-top:36px;"><%=data[i].user %></td>
+        <td style="padding-top:36px;"><%=data[i].height %></td>
+        <td style="padding-top:36px;"><%=data[i].weight %></td>
+        <td style="padding-top:36px;"><%=data[i].color %></td>
+        <td style="padding-top:36px;"><%=data[i].status %></td>
+      
+        <td style="padding-top:36px;">
+            <a href="#exampleModalCenter<%=i+1 %>" style="padding: 0px 0px 0px 25px;" data-toggle="modal"><i class="fa fa-pencil"></i> </a>
+          <a href="#" style="padding: 0px 0px 0px 10px;"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+      <div class="modal fade" id="exampleModalCenter<%=i+1 %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle<%=i+1 %>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle<%=i+1 %>">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form method="post" action="/ref/edit/<%=data[i]._id %>/">
+
+            <div class="modal-body">
+              <div class="form-group"><input type="text" class="form-control" id="height<%=i+1 %>" value="<%=data[i].height %>" name="height" ></div>
+              <div class="form-group"><input type="text" class="form-control" id="weight<%=i+1 %>" value="<%=data[i].weight %>" name="weight"></div>
+              <div class="form-group"><input type="text" class="form-control" id="color<%=i+1 %>" value="<%=data[i].color %>" name="color"></div>
+              <div class="form-group"><input type="text" class="form-control" id="status<%=i+1 %>" value="<%=data[i].status %>" name="status"></div>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </tbody>
+  </table>
+ 
+
+</div>
+
+</body>
+</html>

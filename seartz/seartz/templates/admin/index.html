@@ -1,0 +1,240 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}
+<!--<link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'admin/extra_js/settings.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.js" integrity="sha512-yfJoFJUa+1N2xfxSVIeABC+t37Jz9XnmgSiWKeFhNKMoH0NQLRhyV90AiaMDQJl+nTZxymqEILloSbP+jfs5oA==" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="main">
+        <main class="content">
+            <div class="container-fluid">
+
+                <div class="header">
+                    <h1 class="header-title">
+                        E-commerce Overview
+                    </h1>
+                    <p class="header-subtitle">Your sales increased by 4.25% and revenue increased by 5.12%.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Income</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">$25.300</h1>
+                                <div class="mb-0">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.65% </span>
+                                    Less sales than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Orders</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">12.514</h1>
+                                <div class="mb-0">
+                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.50% </span>
+                                    More visitors than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Activity</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="activity"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">29.232</h1>
+                                <div class="mb-0">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -4.25% </span>
+                                    More earnings than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Revenue</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">$83.300</h1>
+                                <div class="mb-0">
+                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 8.35% </span>
+                                    More earnings than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="card-actions float-right">
+                                    <div class="d-inline-block dropdown show">
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="card-title mb-0">Top Selling Products</h5>
+                            </div>
+                            <table id="datatables-dashboard-products" class="table table-striped my-0">
+                                <thead>
+                                <tr>
+                                    <th class="d-none d-xl-table-cell">Order ID</th>
+                                    <th class="d-none d-xl-table-cell">User</th>
+                                    <th class="d-none d-xl-table-cell">Products</th>
+                                    <th class="d-none d-xl-table-cell">quantity</th>
+                                    <th class="d-none d-xl-table-cell">Coupon Code</th>
+                                    <th class="d-none d-xl-table-cell">Coupon Discount</th>
+                                    <th class="d-none d-xl-table-cell">Price</th>
+                                    <th class="d-none d-xl-table-cell">Delivery Charge</th>
+                                    <th class="d-none d-xl-table-cell">Delivery Status</th>
+                                    <th class="d-none d-xl-table-cell">Payment Method</th>
+                                    <th class="d-none d-xl-table-cell">Razorpay Payment ID</th>
+                                    <th class="d-none d-xl-table-cell">Payment Status</th>
+                                </tr>
+                                </thead>
+                                <tbody id="table_body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="datatables-buttons_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                    </div>
+                    <div class="col-sm-12 col-md-7" style="margin: -20px 0px 0px 1370px;">
+                        <div class="dataTables_paginate paging_simple_numbers" id="datatables-buttons_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled" id="datatables-dashboard-products_previous"><a href="#" aria-controls="datatables-dashboard-products" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                <li class="paginate_button page-item active"><a href="#" aria-controls="datatables-dashboard-products" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="datatables-dashboard-products" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                <li class="paginate_button page-item next" id="datatables-dashboard-products_next"><a href="#" aria-controls="datatables-dashboard-products" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="{% static 'admin/extra_js/app.js' %}"></script>
+<script>
+    function data_table(page=1){
+      $.get(`/api/v1/home/admin/dashboard/?page=${page}`, function( data ) {
+        console.log("data == ",data);
+        if(data){
+          for(var i of data.data){
+            html = `<tr>`
+            html += `<td class="d-none d-xl-table-cell">${i['order_id']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['user_id']}</td>`
+            products = ""
+            for(var k of i['product']){
+                products += `<a href="/admin/product/product/${k.product_id}/change/" style="color:#383d4b">${k.product_id}</a> | `
+            }
+            html += `<td class="d-none d-xl-table-cell">${products}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['quantity']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['coupon_code_id']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['coupon_discount']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['price']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['delivery_charge']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['delivery_status']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['payment_method']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['razorpay_payment_id']}</td>`
+            html += `<td class="d-none d-xl-table-cell">${i['payment_status']}</td>`
+            html += `</tr>`
+            $('#table_body').append(html)
+          }
+          pagination_html = `<li class="paginate_button page-item previous disabled" id="datatables-buttons_previous"><a href="#" aria-controls="datatables-buttons" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>`
+          for(var j of Array(data.pages).keys()){
+            if(j==0){continue}
+            pagination_html += `<li class="paginate_button page-item"><a onclick="data_table(${j})" aria-controls="datatables-buttons" data-dt-idx="${j}" tabindex="0" class="page-link">${j}</a></li>`
+          }
+          pagination_html += `<li class="paginate_button page-item next" id="datatables-buttons_next"><a href="#" aria-controls="datatables-buttons" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>`
+          $('#pagination').html(pagination_html)
+        }
+      });
+    }
+    $( document ).ready(function() {
+        data_table();
+    });
+
+
+
+</script>
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}

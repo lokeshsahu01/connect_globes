@@ -1,0 +1,2 @@
+2020-12-09 07:28:13,672 django.utils.autoreload INFO  Watching for file changes with StatReloader : 
+                              [/home/singham/anaconda3/envs/pythonenv/lib/python3.8/site-packages/django/utils/autoreload.py line 598, in run_with_reloader ]

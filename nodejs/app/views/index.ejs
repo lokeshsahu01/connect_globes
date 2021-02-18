@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>CRUD form <small><a href="/ref/"> user reference</a></small></h2>
+ 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <form method="POST" action="/post/" enctype="multipart/form-data">
+        <th scope="col">#</th>
+        <th scope="col"><input type="email" class="form-control" id="email" placeholder="Enter email" name="email"></th>
+        <th scope="col"><input type="text" class="form-control" id="username" placeholder="Enter Username" name="username"></th>
+        <th scope="col"><input type="text" class="form-control" id="full_name" placeholder="Enter Full Name" name="full_name"></th>
+        <th scope="col 3"><input type="file" class="form-control" id="image" name="img" multiple></th>
+        <th scope="col"><button type="submit" class="btn btn-primary">Submit</button></th>
+      </form>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        
+        <% files.forEach(function(data, i) {%>
+        <th scope="row" style="padding-top:36px;"><%=i+1 %></th>
+        <td style="padding-top:36px;"><%=data.email %></td>
+        <td style="padding-top:36px;"><%=data.username %></td>
+        <td style="padding-top:36px;"><%=data.full_name %></td>
+        <td> 
+          <% data.img.forEach(function(file) {%>
+            <img src="images/<%=file %>" class="img-resposive img-thumbnail" style="height:80px;width:120px;" alt="File"> 
+            <% }) %>
+        </td>
+        <td style="padding-top:36px;"><a href="#exampleModalCenter<%=i+1 %>" style="padding: 0px 0px 0px 25px;" data-toggle="modal"><i class="fa fa-pencil"></i> </a>
+          <a href="/delete/<%=data._id %>/" style="padding: 0px 0px 0px 10px;"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+      <div class="modal fade" id="exampleModalCenter<%=i+1 %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle<%=i+1 %>" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle<%=i+1 %>">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form method="post" action="/edit/<%=data._id %>/" enctype="multipart/form-data">
+            <div class="modal-body">
+              <div class="form-group"><input type="email" class="form-control" id="email<%=i+1 %>" value="<%=data.email %>" name="email"></div>
+              <div class="form-group"><input type="text" class="form-control" id="username<%=i+1 %>" value="<%=data.username %>" name="username"></div>
+              <div class="form-group"><input type="text" class="form-control" id="full_name<%=i+1 %>" value="<%=data.full_name %>" name="full_name"></div>
+              <div class="form-group"><input type="file" class="form-control" id="image<%=i+1 %>" name="img" multiple></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </tbody>
+  </table>
+ 
+
+</div>
+
+</body>
+</html>

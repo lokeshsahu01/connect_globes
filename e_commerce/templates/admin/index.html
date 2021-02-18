@@ -1,0 +1,555 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}
+<!--<link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'admin/extra_js/settings.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.js" integrity="sha512-yfJoFJUa+1N2xfxSVIeABC+t37Jz9XnmgSiWKeFhNKMoH0NQLRhyV90AiaMDQJl+nTZxymqEILloSbP+jfs5oA==" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="main">
+        <main class="content">
+            <div class="container-fluid">
+
+                <div class="header">
+                    <h1 class="header-title">
+                        E-commerce Overview
+                    </h1>
+                    <p class="header-subtitle">Your sales increased by 4.25% and revenue increased by 5.12%.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Income</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">$25.300</h1>
+                                <div class="mb-0">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.65% </span>
+                                    Less sales than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Orders</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">12.514</h1>
+                                <div class="mb-0">
+                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.50% </span>
+                                    More visitors than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Activity</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="activity"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">29.232</h1>
+                                <div class="mb-0">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -4.25% </span>
+                                    More earnings than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Revenue</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">$83.300</h1>
+                                <div class="mb-0">
+                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 8.35% </span>
+                                    More earnings than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col mt-0">
+                                        <h5 class="card-title">Product</h5>
+                                    </div>
+
+                                    <div class="col-auto">
+                                        <div class="avatar">
+                                            <div class="avatar-title rounded-circle bg-primary-dark">
+                                                <i class="align-middle" data-feather="package"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 class="display-5 mt-1 mb-3">3000</h1>
+                                <div class="mb-0">
+                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 8.35% </span>
+                                    More Increase than usual
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-4 d-flex">
+                        <div class="card flex-fill w-100">
+                            <div class="card-header">
+                                <div class="card-actions float-right">
+                                    <a href="#" class="mr-1">
+                                        <i class="align-middle" data-feather="refresh-cw"></i>
+                                    </a>
+                                </div>
+                                <h5 class="card-title mb-0">Total Revenue</h5>
+                            </div>
+                            <div class="card-body py-3">
+                                <div class="chart chart-md">
+                                    <canvas id="chartjs-dashboard-line"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 d-flex">
+							<div class="card flex-fill">
+								<div class="card-header">
+									<div class="card-actions float-right">
+										<a href="#" class="mr-1">
+											<i class="align-middle" data-feather="refresh-cw"></i>
+										</a>
+										<div class="d-inline-block dropdown show">
+											<a href="#" data-toggle="dropdown" data-display="static">
+												<i class="align-middle" data-feather="more-vertical"></i>
+											</a>
+
+											<div class="dropdown-menu dropdown-menu-right">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</div>
+									<h5 class="card-title mb-0">Top Selling Products</h5>
+								</div>
+								<table id="datatables-dashboard-products" class="table table-striped my-0">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th class="d-none d-xl-table-cell">License</th>
+											<th class="d-none d-xl-table-cell">Technology</th>
+											<th class="d-none d-xl-table-cell">Tickets</th>
+											<th>Sales</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>AppStack</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-success">HTML</span></td>
+											<td class="d-none d-xl-table-cell">50</td>
+											<td class="d-none d-xl-table-cell">720</td>
+										</tr>
+										<tr>
+											<td>Spark</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-danger">Angular</span></td>
+											<td class="d-none d-xl-table-cell">20</td>
+											<td class="d-none d-xl-table-cell">540</td>
+										</tr>
+										<tr>
+											<td>Milo</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-warning">React</span></td>
+											<td class="d-none d-xl-table-cell">40</td>
+											<td class="d-none d-xl-table-cell">280</td>
+										</tr>
+										<tr>
+											<td>Ada</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-info">Vue</span></td>
+											<td class="d-none d-xl-table-cell">60</td>
+											<td class="d-none d-xl-table-cell">610</td>
+										</tr>
+										<tr>
+											<td>Abel</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-danger">Angular</span></td>
+											<td class="d-none d-xl-table-cell">80</td>
+											<td class="d-none d-xl-table-cell">150</td>
+										</tr>
+										<tr>
+											<td>Spark</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-success">HTML</span></td>
+											<td class="d-none d-xl-table-cell">20</td>
+											<td class="d-none d-xl-table-cell">480</td>
+										</tr>
+										<tr>
+											<td>Libre</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-warning">React</span></td>
+											<td class="d-none d-xl-table-cell">30</td>
+											<td class="d-none d-xl-table-cell">280</td>
+										</tr>
+										<tr>
+											<td>Von</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-danger">Angular</span></td>
+											<td class="d-none d-xl-table-cell">50</td>
+											<td class="d-none d-xl-table-cell">350</td>
+										</tr>
+										<tr>
+											<td>Material Blog</td>
+											<td class="d-none d-xl-table-cell">Single license</td>
+											<td><span class="badge badge-info">Vue</span></td>
+											<td class="d-none d-xl-table-cell">10</td>
+											<td class="d-none d-xl-table-cell">480</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-8 d-flex">
+                        <div class="card flex-fill w-100 d-flex">
+                            <div class="card-header">
+                                <h5 class="card-title">Line Chart</h5>
+                                <h6 class="card-subtitle text-muted">A line chart is a way of plotting data points on a line.</h6>
+                            </div>
+                            <div class="card-body d-flex">
+                                <div class="chart">
+                                    <canvas id="chartjs-line"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 d-flex">
+                        <div class="card flex-fill w-100" >
+                            <div class="card-header">
+                                <div class="card-actions float-right">
+                                    <a href="#" class="mr-1">
+                                        <i class="align-middle" data-feather="refresh-cw"></i>
+                                    </a>
+                                </div>
+                                <h5 class="card-title mb-0">Sales / Revenue</h5>
+                            </div>
+                            <div class="card-body d-flex w-100">
+                                <div class="align-self-center chart chart-lg">
+                                    <canvas id="chartjs-dashboard-bar-alt"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="{% static 'admin/extra_js/app.js' %}"></script>
+<!--<script>-->
+<!--        const roomName = Math.random().toString(36).slice(2);-->
+<!--        const chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/${roomName}/`);-->
+<!--        chatSocket.onmessage = function(e) {-->
+<!--            const data = JSON.parse(e.data);-->
+<!--            chatSocket.send('again');-->
+<!--        };-->
+<!--        chatSocket.onclose = function(e) {-->
+<!--            console.error('Chat socket closed unexpectedly');-->
+<!--        };-->
+
+<!--    </script>-->
+<script>
+		$(function() {
+			$('#datatables-dashboard-products').DataTable({
+				pageLength: 6,
+				lengthChange: false,
+				bFilter: false,
+				autoWidth: false
+			});
+		});
+	</script>
+<script>
+		$(function() {
+			// Line chart
+			new Chart(document.getElementById("chartjs-line"), {
+				type: "line",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Sales ($)",
+						fill: true,
+						backgroundColor: "transparent",
+						borderColor: window.theme.primary,
+						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+					}, {
+						label: "Orders",
+						fill: true,
+						backgroundColor: "transparent",
+						borderColor: window.theme.tertiary,
+						borderDash: [4, 4],
+						data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					tooltips: {
+						intersect: false
+					},
+					hover: {
+						intersect: true
+					},
+					plugins: {
+						filler: {
+							propagate: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							reverse: true,
+							gridLines: {
+								color: "rgba(0,0,0,0.05)"
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								stepSize: 500
+							},
+							display: true,
+							borderDash: [5, 5],
+							gridLines: {
+								color: "rgba(0,0,0,0)",
+								fontColor: "#fff"
+							}
+						}]
+					}
+				}
+			});
+		});
+
+</script>
+<script>
+		$(function() {
+			// Doughnut chart
+			new Chart(document.getElementById("chartjs-doughnut"), {
+				type: "doughnut",
+				data: {
+					labels: ["Social", "Search Engines", "Direct", "Other"],
+					datasets: [{
+						data: [260, 125, 54, 146],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.success,
+							window.theme.warning,
+							"#E8EAED"
+						],
+						borderColor: "transparent"
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					cutoutPercentage: 65,
+					legend: {
+						display: false
+					}
+				}
+			});
+		});
+
+</script>
+<script>
+		$(function() {
+			// Line chart
+			new Chart(document.getElementById("chartjs-dashboard-line"), {
+				type: 'line',
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+							label: "Orders",
+							fill: true,
+							backgroundColor: window.theme.primary,
+							borderColor: window.theme.primary,
+							borderWidth: 2,
+							data: [3, 2, 3, 5, 6, 5, 4, 6, 9, 10, 8, 9]
+						},
+						{
+							label: "Sales ($)",
+							fill: true,
+							backgroundColor: "rgba(0, 0, 0, 0.05)",
+							borderColor: "rgba(0, 0, 0, 0.05)",
+							borderWidth: 2,
+							data: [5, 4, 10, 15, 16, 12, 10, 13, 20, 22, 18, 20]
+						}
+					]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					tooltips: {
+						intersect: false
+					},
+					hover: {
+						intersect: true
+					},
+					plugins: {
+						filler: {
+							propagate: false
+						}
+					},
+					elements: {
+						point: {
+							radius: 0
+						}
+					},
+					scales: {
+						xAxes: [{
+							reverse: true,
+							gridLines: {
+								color: "rgba(0,0,0,0.0)"
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								stepSize: 5
+							},
+							display: true,
+							gridLines: {
+								color: "rgba(0,0,0,0)",
+								fontColor: "#fff"
+							}
+						}]
+					}
+				}
+			});
+		});
+
+
+
+</script>
+<script>
+		$(function() {
+			// Bar chart
+			new Chart(document.getElementById("chartjs-dashboard-bar-alt"), {
+				type: "bar",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Last year",
+						backgroundColor: window.theme.primary,
+						borderColor: window.theme.primary,
+						hoverBackgroundColor: window.theme.primary,
+						hoverBorderColor: window.theme.primary,
+						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}, {
+						label: "This year",
+						backgroundColor: "#E8EAED",
+						borderColor: "#E8EAED",
+						hoverBackgroundColor: "#E8EAED",
+						hoverBorderColor: "#E8EAED",
+						data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					scales: {
+						yAxes: [{
+							gridLines: {
+								display: false
+							},
+							stacked: false,
+							ticks: {
+								stepSize: 20
+							}
+						}],
+						xAxes: [{
+							stacked: false,
+							gridLines: {
+								color: "transparent"
+							}
+						}]
+					}
+				}
+			});
+		});
+
+</script>
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
